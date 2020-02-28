@@ -6,7 +6,14 @@ body {
   overflow-x: hidden;
   background-image: linear-gradient(to bottom right, #f3877e, #8146d5, #241c89);
   display: flex;
+  flex-direction: column;
   justify-content: center;
+}
+
+@media (min-width: 1290px) {
+  body {
+    align-items: center;
+  }
 }
 
 a {
@@ -22,6 +29,7 @@ a {
 @media (min-width: 1290px) {
   .wrapper {
     display: flex;
+    flex-grow: 0;
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -101,4 +109,23 @@ a {
 
 .item:hover {
   color: #ff3857;
+}
+
+footer {
+  align-self: center;
+}
+
+.footer-link {
+  margin-top: 40px;
+  display: block;
+}
+
+svg {
+  width: 80px;
+  fill: #fff;
+  transition: fill 0.2s;
+}
+
+.footer-link:hover svg {
+  fill: #f3877e;
 }
