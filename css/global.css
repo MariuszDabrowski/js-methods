@@ -1,5 +1,5 @@
 body {
-  margin: 50px 0;
+  margin: 50px;
   font-family: 'Lato';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -14,12 +14,18 @@ a {
 }
 
 .wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   padding: 30px 40px 40px;
   background: #ffffff;
   border-radius: 3px;
+}
+
+@media (min-width: 1290px) {
+  .wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
 }
 
 .section {
@@ -27,22 +33,26 @@ a {
   min-width: 240px;
 }
 
-.section:after {
-  content: '';
-  width: 1px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: calc(100% + 20px);
-  background: #f0e4fb;
-}
+.section + .section { margin: 40px 0 0 0; }
 
-.section:last-child:after {
-  display: none;
-}
-
-.section + .section {
-  margin-left: 40px;
+@media (min-width: 1290px) {
+  .section:after {
+    content: '';
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: calc(100% + 20px);
+    background: #f0e4fb;
+  }
+  
+  .section:last-child:after {
+    display: none;
+  }
+  
+  .section + .section {
+    margin: 0 0 0 40px;
+  }
 }
 
 .section__heading {
